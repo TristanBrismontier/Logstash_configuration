@@ -1,2 +1,9 @@
 Logstash config
 
+Link by Docker 
+
+$ docker run -d -v /data --name dataelk busybox
+$ docker run -p 8080:80 \
+    -v /path/to/your/logstash/config:/etc/logstash \
+    --volumes-from dataelk \
+    willdurand/elk
